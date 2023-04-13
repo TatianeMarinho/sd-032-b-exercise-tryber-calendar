@@ -20,26 +20,33 @@ const decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
 
 // Escreva seu código abaixo.
 //1 - Crie um calendário dinamicamente
-const ul = document.querySelector('#days'); // capturei a ul.
+const ul = document.getElementById("days"); // capturei a ul.
 
 const days = () => {
-  for (let i = 0; i < decemberDaysList.length; i += 0){
+  for (let i = 0; i < decemberDaysList.length; i += 1){
     const day = decemberDaysList[i];
     const li = document.createElement('li');
-    li.innerHTML = day;
+    li.innerText = day;
     li.className = 'day';
+    
 
     if( day === 24 || day === 25 || day ===31){
-      li.classList.add = 'hodiday';
-    }else if (day === 4 || day === 11 || day === 18 || day === 25){
-      li.classList.add = 'friday';
-    };
-    
+      li.classList.add('') = 'hodiday';
+    }if (day === 4 || day === 11 || day === 18 || day === 25){
+      li.classList.add('') = 'friday';
+    }; 
     ul.appendChild(li);
   };
-    
+   
 };
 days();
 
+//Exercício 2 – Implemente uma função que muda a cor de fundo dos dias que possuem a classe "holiday"
+const colorHoliday = () => {
+const hodiday = document.getElementById("btn-holiday");
 
+
+
+
+}
  
