@@ -1,5 +1,3 @@
-const { get } = require("cypress/types/lodash");
-
 const createDaysOfTheWeek = () => {
   const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
   const weekDaysList = document.querySelector('.week-days');
@@ -30,10 +28,10 @@ const days = () => {
     li.className = 'day';
     
 
-    if( day === 24 || day === 25 || day ===31){
-      li.classList.add('') = 'hodiday';
+    if( day === 24 || day === 25 || day === 31){
+      li.classList.add('holiday');
     }if (day === 4 || day === 11 || day === 18 || day === 25){
-      li.classList.add('') = 'friday';
+      li.classList.add('friday');
     }; 
     ul.appendChild(li);
   };
