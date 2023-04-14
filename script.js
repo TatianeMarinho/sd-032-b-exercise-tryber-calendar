@@ -44,7 +44,7 @@ const colorHoliday = () => {
   const buttonHoliday = document.getElementById("btn-holiday");
   const listHolidays = document.getElementsByClassName('holiday');
   const colorStart = "rgb(238,238,238)";
-  const colorOn = 'green';
+  const colorOn = 'orange';
 
   buttonHoliday.addEventListener('click',() =>{
       for (let i = 0; i < listHolidays.length; i += 1) {
@@ -66,7 +66,7 @@ const friday = () => {
   const arrayFriday = [4, 11, 18, 25];
   const buttonFriday = document.getElementById("btn-friday");
   const listFridays = document.getElementsByClassName('friday');
-  const newText = "Sextouuuu!!!!!!!";
+  const newText = "Uhul!";
 
   buttonFriday.addEventListener('click',() =>{
     for (let i = 0; i < listFridays.length; i += 1) {
@@ -97,4 +97,34 @@ mouseOver();
 mouseOut(); 
 
  // Exercício 5 - Implemente uma função que seleciona uma tarefa e atribui a cor da tarefa ao dia do calendário
- 
+const selectTask = () => {//atribuindo a classe selected a tarefa selecionada
+  let classTask = document.getElementsByClassName('task');
+
+  for (const task of classTask) {
+    task.addEventListener('click', (event) => {
+      let selectedElement = document.querySelector('.selected');
+
+      event.target.classList.add('selected');
+
+      if (selectedElement !== null) {
+        selectedElement.classList.remove('selected');
+      }
+    });
+  }
+};
+selectTask();
+
+const selectColor = () => { //atribuindo cor da tarefa ao dia
+  let days = document.querySelector('#days');
+
+  days.addEventListener('click', (event) =>{
+    let taskSelect = document.querySelector('selected');
+
+    if(taskSelect === null || event.target.style.color === taskSelect.style.backgroundColor){
+      event.target.style.color = 'rgb(119,119,119)';
+    } else {
+      event.target.style.color = taskSelect.style.backgroundColor;
+    }
+  });
+};
+selectColor();
