@@ -41,10 +41,23 @@ days();
 
 //Exercício 2 – Implemente uma função que muda a cor de fundo dos dias que possuem a classe "holiday"
 const colorHoliday = () => {
-const hodiday = document.getElementById("btn-holiday");
+const buttonHoliday = document.getElementById("btn-holiday");
+const listHolidays = document.getElementsByClassName('holiday');
+const colorStart = "rgb(238,238,238)";
+const colorOn = 'green';
 
+buttonHoliday.addEventListener('click',() =>{
+    for (let i = 0; i < listHolidays.length; i += 1) {
+      const holiday = listHolidays[i];
+      const elementNewColor = holiday.style.backgroundColor === colorOn;
 
-
-
-}
+      if(elementNewColor) {
+        listHolidays[i].style.backgroundColor = colorStart; 
+      }else {
+        listHolidays[i].style.backgroundColor = colorOn;
+      }
+    }
+  });
+};
+colorHoliday();
  
