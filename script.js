@@ -63,16 +63,17 @@ colorHoliday();
 
 //Exercício 3 – Implemente uma função que modifica o texto exibido nos dias que são sextas-feiras
 const friday = () => {
+  const arrayFriday = [4, 11, 18, 25];
   const buttonFriday = document.getElementById("btn-friday");
   const listFridays = document.getElementsByClassName('friday');
   const newText = "Sextouuuu!!!!!!!";
 
   buttonFriday.addEventListener('click',() =>{
     for (let i = 0; i < listFridays.length; i += 1) {
-      if(listFridays[i] !== newText) {
-        listFridays[i].innerText = newText; 
-      }else if (listFridays[i] === newText){
-        listFridays[i].innerText = listFridays[i];
+      if(listFridays[i].innerText === newText) {
+        listFridays[i].innerText = arrayFriday[i]; 
+      }else {
+        listFridays[i].innerText = newText;
       }
     }
   });
