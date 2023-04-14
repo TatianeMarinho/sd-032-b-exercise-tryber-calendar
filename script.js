@@ -79,4 +79,22 @@ const friday = () => {
   });
 };
 friday();
+
+//Exercício 4 – Implemente duas funções que criam um efeito de "zoom"
+const mouseOver = () => {
+  const days = document.querySelector('#days');
+  days.addEventListener('mouseover', (event) => {
+    event.target.style.fontSize = '30px';
+  });
+}
+const mouseOut = () => {
+  const days = document.querySelector('#days');
+  days.addEventListener('mouseout', (event) => {
+    event.target.style.fontSize = '20px';
+  });
+}
+mouseOver();
+mouseOut(); 
+
+ // Exercício 5 - Implemente uma função que seleciona uma tarefa e atribui a cor da tarefa ao dia do calendário
  
